@@ -1,0 +1,38 @@
+Conflitos no Git são bastante comuns e acontecem sempre quando o mesmo arquivo foi modificado por duas versões diferentes e essas versões não podem ser automaticamente mescladas. Veja a seguir como um conflito pode acontecer na prática:
+
+Digamos que você e seu amigo estão trabalhando na mesma branch em um repositório remoto do GitHub. Vocês estão trabalhando no código de um site.
+
+Você abre o arquivo "index.html" e altera o código que corresponde ao título do site para "Hello World".
+
+Você salva o que acabou de fazer através de um novo commit local.
+
+git add index.html
+git commit -m "Alterando título do site"
+BashCopiar
+Em seguida, você precisa usar git pull para receber o repositório remoto, mesclar o código na sua máquina para então poder atualizar o repositório com as suas próprias alterações.
+
+
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+ErrorCopiar
+Ops! Uma mensagem de CONFLITO. Sabemos que o conflito ocorreu em index.html, pois a mensagem de conflito indica isso.
+
+Ao abrir o arquivo index.html, ele agora contém o seguinte:
+
+<html>
+	<head>
+<<<<<<< HEAD
+		<title>Hello World</title>
+=======
+		<title>Olá Mundo</title>
+>>>>>>> master
+	</head>
+	<body>
+		Lorem ipsum dolor sit amet consectetur ...
+	</body>
+</html>
+HTMLCopiar
+Bom, acontece que seu amigo deu um commit seguido de um push antes de você, alterando a mesma linha de código de forma diferente. Neste caso ele escreveu "Olá Mundo" no título, e você, "Hello World".
+
+
+O Git é fantástico em resolver fusões de código automaticamente, porém em casos onde duas alterações diferentes são feitas no mesmo trecho de código, o sistema de versionamento não tem como saber qual das versões é a definitiva. Precisamos então, intervir manualmente no código, e para isso o Git cria essa flag, com "<<<<<<<", "=======" e ">>>>>>>", mostrando que nas seguintes linhas houve conflito.

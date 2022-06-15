@@ -1,0 +1,46 @@
+Antes de criar o repositório você deve criar um pasta para ele, obviamente.
+
+Para criar uma nova pasta no Linux executamos mkdir nome-da-pasta.
+
+Você entra nela, ou melhor, vai até ela cd nome-da-pasta.
+
+Agora é só criar o repositório
+
+git init
+Para testar, pergunte ao Git sobre o status do repositório git status.
+
+O resultado deve ser parecido com isto…
+
+# On branch master
+#
+# Initial commit
+#
+nothing to commit (create/copy files and use "git add" to track)
+“Nada para comitar”… bom, então vamos inserir um arquivo e “comitar”.
+
+Adicionado e comitando
+Considerando que você já criou o seu repositório Git e está na pasta do repositório.
+
+Você deve criar um arquivo qualquer, utilize seu editor de texto ou então utilize o comando seguinte.
+
+touch readme.md
+O comando touch é um utilitário do Linux.
+
+Antes de comitar, devemos adicionar, a sequência é sempre esta:
+
+Adicionar (add)
+Comitar (commit -m "mensagem")
+Veja os comandos:
+
+git add readme.md
+git commit -m "my first commit"
+Criando um repositório no GitHub
+Primeiro, crie um conta no GitHub.
+
+Utilize um nome de guerra que transmita seriedade, ele será visto por todos, inclusive seu futuro empregador.
+
+Agora procure o ícone com um sinal de mais (+) chamado “Create new…”.
+
+Defina um nome para seu novo repositório.
+
+Por enquanto, ignore as outras opções. Depois, com calma, você mesmo aprenderá sobre elas.
